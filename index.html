@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AFTERHOURS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="paginas.css">
+    <link rel="stylesheet" href="tema.css">
+    <script>try{document.documentElement.setAttribute("data-tema",localStorage.getItem("tema")==="\"claro\""?"claro":"escuro")}catch(e){}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="imgs/Logo.jpeg" alt="Logo" class="logoheader">
+            </a>
+
+            <nav class="nav-menu" id="nav-menu">
+                <a href="index.html" class="active">INÍCIO</a>
+                <a href="cardapio.html">CARDÁPIO</a>
+                <a href="index.html#sobre">SOBRE NÓS</a>
+                <a href="pedidos.html">PEDIDOS</a>
+                <a href="perfil.html" class="so-mobile">PERFIL</a>
+                <form class="form-busca busca-menu so-mobile" role="search">
+                    <input type="search" name="q" placeholder="Buscar lanche" maxlength="40" aria-label="Buscar lanche">
+                    <button type="submit" aria-label="Buscar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg></button>
+                </form>
+                <div class="conta conta-mobile so-mobile">
+                    <button type="button" class="botao-entrar" data-abrir-login>ENTRAR</button>
+                    <a href="cadastro.html" class="botao-cadastrar">CADASTRAR</a>
+                </div>
+            </nav>
+
+            <div class="header-icons">
+                <form class="form-busca busca-topo" role="search">
+                    <input type="search" name="q" placeholder="Buscar lanche" maxlength="40" aria-label="Buscar lanche">
+                    <button type="submit" aria-label="Buscar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg></button>
+                </form>
+                <button type="button" class="botao-tema" data-tema-botao aria-label="Alternar modo claro e escuro">☀</button>
+                <a href="sacola.html" class="icone-sacola">
+                    <img src="imgs/carrin.png" alt="Sacola">
+                    <span class="contador zero" data-contador>0</span>
+                </a>
+                <a href="perfil.html" class="icone-perfil">
+                    <img src="imgs/user.png" alt="Perfil">
+                </a>
+                <div class="conta conta-desktop">
+                    <button type="button" class="botao-entrar" data-abrir-login>ENTRAR</button>
+                    <a href="cadastro.html" class="botao-cadastrar">CADASTRAR</a>
+                </div>
+            </div>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="banner-container">
+        <h1><span class="corzinha1">AFTER</span><span class="corzinha2">HOURS</span></h1>
+        <h2>GOOD FOOD <br>FOR THE <br><span class="corzinha2">LATE ONES</span></h2>
+        <br><br><br>
+        <p>Hambúrgueres artesanais,<br class="br-mobile">feitos <br>pra quem valoriza <br class="br-mobile">boas músicas, <br>boas vibes <br class="br-mobile">e <span class="corzinha2">noites inesquecíveis.</span></p>
+        <br><br><br>
+        <button onclick="location.href='cardapio.html'">VER CARDÁPIO <span>➞</span></button>
+    </div>
+
+    <section class="favoritos">
+        <p class="subtitulo">NOSSO CARDÁPIO</p>
+        <h2 class="titulo">OS FAVORITOS</h2>
+
+        <div class="lista-favoritos">
+            <div class="card card-destaque">
+                <span class="etiqueta">HOUSE SPECIAL</span>
+                <div class="imagem"><img src="imgs/BURGUERS/Burgerland.png" alt="Burgerland"></div>
+                <h3 class="nome">BURGERLAND</h3>
+                <p class="preco">R$ 42,90</p>
+                <p class="descricao">Dois burgers artesanais de 150g, queijo cheddar derretido, bacon crocante, cebola caramelizada, crispy onions e molho especial da casa no pão brioche tostado.</p>
+            </div>
+
+            <div class="card">
+                <div class="imagem"><img src="imgs/BURGUERS/Burger in the wind.png" alt="Burger in the Wind"></div>
+                <h3 class="nome">BURGER IN THE WIND</h3>
+                <p class="preco">R$ 32,90</p>
+                <p class="descricao">Burger artesanal de 180g, cheddar, bacon crocante, cebola caramelizada e molho especial levemente picante.</p>
+            </div>
+
+            <div class="card">
+                <div class="imagem"><img src="imgs/BURGUERS/Patrono Burger.png" alt="Patrono Burger"></div>
+                <h3 class="nome">PATRONO BURGER</h3>
+                <p class="preco">R$ 37,90</p>
+                <p class="descricao">Burger artesanal de 180g, queijo prato derretido, linguiça artesanal defumada, bacon crocante, cebola na chapa, maionese temperada e molho especial levemente picante no pão brioche tostado.</p>
+            </div>
+
+            <div class="card">
+                <div class="imagem"><img src="imgs/BURGUERS/SaladCaesar.png" alt="Salad Caesar"></div>
+                <h3 class="nome">SALAD CAESAR</h3>
+                <p class="preco">R$ 27,90</p>
+                <p class="descricao">Alface fresca, frango grelhado em tiras, parmesão, croutons crocantes e molho Caesar artesanal.</p>
+            </div>
+        </div>
+
+        <button class="botao-cardapio" onclick="location.href='cardapio.html'">VER CARDÁPIO <span>➞</span></button>
+    </section>
+
+    <section class="sobre" id="sobre">
+        <p class="subtitulo">SOBRE NÓS</p>
+
+        <div class="sobre-grid">
+            <div class="imagem imagem-sobre"><img src="imgs/img sobre nos 1.png" alt=""></div>
+
+            <div class="sobre-texto">
+                <p class="sobre-marca">AFTERHOURS</p>
+                <h2 class="sobre-titulo">MAIS QUE <br>HAMBÚRGUERES, <br>É UM <span class="destaque">ESTILO</span>.</h2>
+                <p class="sobre-descricao">A Afterhours nasceu da paixão por música, comida e noites longas. Cada hambúrguer é uma experiência, assim como cada faixa do seu artista favorito.</p>
+                <a href="cadastro.html" class="sobre-link">CADASTRE-SE ➞</a>
+            </div>
+
+            <div class="imagem imagem-sobre"><img src="imgs/img sobre nos 2.png" alt=""></div>
+        </div>
+    </section>
+
+    <div id="rodape"></div>
+
+    <script src="produtos.js"></script>
+    <script src="dados.js"></script>
+    <script src="mascaras.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro | AFTERHOURS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="paginas.css">
+    <link rel="stylesheet" href="tema.css">
+    <script>try{document.documentElement.setAttribute("data-tema",localStorage.getItem("tema")==="\"claro\""?"claro":"escuro")}catch(e){}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="imgs/Logo.jpeg" alt="Logo" class="logoheader">
+            </a>
+
+            <nav class="nav-menu" id="nav-menu">
+                <a href="index.html">INÍCIO</a>
+                <a href="cardapio.html">CARDÁPIO</a>
+                <a href="index.html#sobre">SOBRE NÓS</a>
+                <a href="pedidos.html">PEDIDOS</a>
+                <a href="perfil.html" class="so-mobile">PERFIL</a>
+                <form class="form-busca busca-menu so-mobile" role="search">
+                    <input type="search" name="q" placeholder="Buscar lanche" maxlength="40" aria-label="Buscar lanche">
+                    <button type="submit" aria-label="Buscar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg></button>
+                </form>
+                <div class="conta conta-mobile so-mobile">
+                    <button type="button" class="botao-entrar" data-abrir-login>ENTRAR</button>
+                    <a href="cadastro.html" class="botao-cadastrar">CADASTRAR</a>
+                </div>
+            </nav>
+
+            <div class="header-icons">
+                <form class="form-busca busca-topo" role="search">
+                    <input type="search" name="q" placeholder="Buscar lanche" maxlength="40" aria-label="Buscar lanche">
+                    <button type="submit" aria-label="Buscar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg></button>
+                </form>
+                <button type="button" class="botao-tema" data-tema-botao aria-label="Alternar modo claro e escuro">☀</button>
+                <a href="sacola.html" class="icone-sacola">
+                    <img src="imgs/carrin.png" alt="Sacola">
+                    <span class="contador zero" data-contador>0</span>
+                </a>
+                <a href="perfil.html" class="icone-perfil">
+                    <img src="imgs/user.png" alt="Perfil">
+                </a>
+                <div class="conta conta-desktop">
+                    <button type="button" class="botao-entrar" data-abrir-login>ENTRAR</button>
+                    <a href="cadastro.html" class="botao-cadastrar">CADASTRAR</a>
+                </div>
+            </div>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="pagina">
+        <div class="caixa-form">
+            <p class="subtitulo">JUNTE-SE À AFTERHOURS</p>
+            <h1 class="titulo">CRIE SUA CONTA</h1>
+
+            <form id="form-cadastro" novalidate>
+                <h2 class="secao">DADOS PESSOAIS</h2>
+                <div class="grade-form">
+                    <label class="campo campo-inteiro">
+                        <span>Nome completo</span>
+                        <input type="text" name="nome" maxlength="60" data-mascara="nome" data-regra="nome" autocomplete="name">
+                        <small class="erro"></small>
+                    </label>
+                    <label class="campo">
+                        <span>CPF</span>
+                        <input type="text" name="cpf" maxlength="14" inputmode="numeric" placeholder="000.000.000-00" data-mascara="cpf" data-regra="cpf">
+                        <small class="erro"></small>
+                    </label>
+                    <label class="campo">
+                        <span>Data de nascimento</span>
+                        <input type="text" name="nascimento" maxlength="10" inputmode="numeric" placeholder="dd/mm/aaaa" data-mascara="data" data-regra="nascimento" autocomplete="bday">
+                        <small class="erro"></small>
+                    </label>
+                    <label class="campo">
+                        <span>E-mail</span>
+                        <input type="email" name="email" maxlength="80" data-regra="email" autocomplete="email">
+                        <small class="erro"></small>
+                    </label>
+                    <label class="campo">
+                        <span>Telefone</span>
+                        <input type="text" name="telefone" maxlength="15" inputmode="numeric" placeholder="(00) 00000-0000" data-mascara="telefone" data-regra="telefone" autocomplete="tel">
+                        <small class="erro"></small>
+                    </label>
+                    <label class="campo">
+                        <span>Senha</span>
+                        <input type="password" name="senha" maxlength="20" data-regra="senha" autocomplete="new-password">
+                        <small class="erro"></small>
+                    </label>
+                    <label class="campo">
+                        <span>Confirmar senha</span>
+                        <input type="password" name="confirmar" maxlength="20" data-regra="confirmar" autocomplete="new-password">
+                        <small class="erro"></small>
+                    </label>
+                </div>
+
+                <h2 class="secao">ENDEREÇO DE ENTREGA</h2>
+                <div class="grade-form">
+                    <label class="campo">
+                        <span>CEP</span>
+                        <input type="text" name="cep" maxlength="9" inputmode="numeric" placeholder="00000-000" data-mascara="cep" data-regra="cep" autocomplete="postal-code">
+                        <small class="erro"></small>
+                    </label>
+                    <label class="campo">
+                        <span>Número</span>
+                        <input type="text" name="numero" maxlength="6" inputmode="numeric" data-numerico data-regra="numero">
+                        <small class="erro"></small>
+                    </label>
+                    <label class="campo campo-inteiro">
+                        <span>Rua</span>
+                        <input type="text" name="rua" maxlength="60" data-regra="texto" autocomplete="address-line1">
+                        <small class="erro"></small>
+                    </label>
+                    <label class="campo">
+                        <span>Complemento (opcional)</span>
+                        <input type="text" name="complemento" maxlength="30">
+                        <small class="erro"></small>
+                    </label>
+                    <label class="campo">
+                        <span>Bairro</span>
+                        <input type="text" name="bairro" maxlength="40" data-regra="texto">
+                        <small class="erro"></small>
+                    </label>
+                    <label class="campo">
+                        <span>Cidade</span>
+                        <input type="text" name="cidade" maxlength="40" data-regra="texto" autocomplete="address-level2">
+                        <small class="erro"></small>
+                    </label>
+                    <label class="campo">
+                        <span>UF</span>
+                        <input type="text" name="uf" maxlength="2" placeholder="MG" data-mascara="uf" data-regra="uf" autocomplete="address-level1">
+                        <small class="erro"></small>
+                    </label>
+                </div>
+
+                <button type="submit" class="botao">CRIAR CONTA</button>
+                <p class="form-rodape">Já tem conta? <button type="button" class="link-botao" data-abrir-login>Entrar</button></p>
+            </form>
+        </div>
+    </main>
+
+    <div id="rodape"></div>
+
+    <script src="produtos.js"></script>
+    <script src="dados.js"></script>
+    <script src="mascaras.js"></script>
+    <script src="script.js"></script>
+    <script src="cadastro.js"></script>
+</body>
+</html>

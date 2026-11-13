@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sacola | AFTERHOURS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="paginas.css">
+    <link rel="stylesheet" href="tema.css">
+    <script>try{document.documentElement.setAttribute("data-tema",localStorage.getItem("tema")==="\"claro\""?"claro":"escuro")}catch(e){}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <a href="index.html" class="logo">
+                <img src="imgs/Logo.jpeg" alt="Logo" class="logoheader">
+            </a>
+
+            <nav class="nav-menu" id="nav-menu">
+                <a href="index.html">INÍCIO</a>
+                <a href="cardapio.html">CARDÁPIO</a>
+                <a href="index.html#sobre">SOBRE NÓS</a>
+                <a href="pedidos.html">PEDIDOS</a>
+                <a href="perfil.html" class="so-mobile">PERFIL</a>
+                <form class="form-busca busca-menu so-mobile" role="search">
+                    <input type="search" name="q" placeholder="Buscar lanche" maxlength="40" aria-label="Buscar lanche">
+                    <button type="submit" aria-label="Buscar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg></button>
+                </form>
+                <div class="conta conta-mobile so-mobile">
+                    <button type="button" class="botao-entrar" data-abrir-login>ENTRAR</button>
+                    <a href="cadastro.html" class="botao-cadastrar">CADASTRAR</a>
+                </div>
+            </nav>
+
+            <div class="header-icons">
+                <form class="form-busca busca-topo" role="search">
+                    <input type="search" name="q" placeholder="Buscar lanche" maxlength="40" aria-label="Buscar lanche">
+                    <button type="submit" aria-label="Buscar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg></button>
+                </form>
+                <button type="button" class="botao-tema" data-tema-botao aria-label="Alternar modo claro e escuro">☀</button>
+                <a href="sacola.html" class="icone-sacola">
+                    <img src="imgs/carrin.png" alt="Sacola">
+                    <span class="contador zero" data-contador>0</span>
+                </a>
+                <a href="perfil.html" class="icone-perfil">
+                    <img src="imgs/user.png" alt="Perfil">
+                </a>
+                <div class="conta conta-desktop">
+                    <button type="button" class="botao-entrar" data-abrir-login>ENTRAR</button>
+                    <a href="cadastro.html" class="botao-cadastrar">CADASTRAR</a>
+                </div>
+            </div>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="pagina">
+        <p class="subtitulo">AFTERHOURS</p>
+        <h1 class="titulo">SUA SACOLA</h1>
+
+        <div class="sacola-grade" id="conteudo-sacola">
+            <div id="itens-sacola"></div>
+
+            <aside class="resumo">
+                <h2 class="resumo-titulo">RESUMO DO PEDIDO</h2>
+                <div class="linha-resumo"><span>Subtotal</span><span id="subtotal"></span></div>
+                <div class="linha-resumo"><span>Entrega</span><span id="entrega"></span></div>
+                <p class="dica" id="dica-entrega"></p>
+                <div class="linha-resumo linha-total"><span>Total</span><span id="total"></span></div>
+
+                <form id="form-pedido" novalidate>
+                    <label class="campo">
+                        <span>Forma de pagamento</span>
+                        <select name="pagamento">
+                            <option value="Pix">Pix</option>
+                            <option value="Cartão de crédito">Cartão de crédito</option>
+                            <option value="Cartão de débito">Cartão de débito</option>
+                            <option value="Dinheiro">Dinheiro</option>
+                        </select>
+                    </label>
+                    <label class="campo">
+                        <span>Observações</span>
+                        <textarea name="obs" id="obs" rows="3" maxlength="120" placeholder="Ex: sem cebola"></textarea>
+                        <small class="contagem" id="contagem-obs">0/120</small>
+                    </label>
+                    <div class="endereco" id="endereco-entrega"></div>
+                    <button type="submit" class="botao">FINALIZAR PEDIDO</button>
+                </form>
+            </aside>
+        </div>
+
+        <div class="vazio" id="sacola-vazia" hidden>
+            <p>Sua sacola está vazia.</p>
+            <a href="cardapio.html" class="botao botao-pequeno">VER CARDÁPIO</a>
+        </div>
+    </main>
+
+    <div id="rodape"></div>
+
+    <script src="produtos.js"></script>
+    <script src="dados.js"></script>
+    <script src="mascaras.js"></script>
+    <script src="script.js"></script>
+    <script src="sacola.js"></script>
+</body>
+</html>
